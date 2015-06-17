@@ -1,0 +1,35 @@
+.foo {
+  -moz-padding: 20px;
+  -o-padding: 20px;
+
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  text-align: -ms-center;
+  text-align: -o-center;
+
+  bar: -webkit-test;
+  -moz-columns: 30px;
+}
+
+.bar {
+  margin: 6620px;
+  margin: -webkit-auto;
+  margin: -moz-auto;
+
+  text-align: -webkit-center;
+  text-align: -moz-center;
+
+  -ms-foo: 30px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex; 
+  display: -moz-flex; 
+  display: -ms-flexbox;
+  display: flex;
+}

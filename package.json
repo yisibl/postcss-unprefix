@@ -1,0 +1,21 @@
+{
+  "name": "postcss-unprefix",
+  "version": "0.0.1",
+  "description": "PostCSS plugin unprefix",
+  "keywords": ["postcss", "css", "postcss-plugin", "autoprefixer", "prefix", "unprefix"],
+  "author": "一丝 <percyley@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yisibl/postcss-unprefix.git"
+  },
+  "dependencies": {
+    "postcss": "^4.1.9"
+  },
+  "devDependencies": {
+    "tape": "^4.0.0"
+  },
+  "scripts": {
+    "test": "tape test"
+  }
+}
