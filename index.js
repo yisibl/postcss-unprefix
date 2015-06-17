@@ -1,6 +1,5 @@
 var postcss = require('postcss')
 var properties = require('./properties')
-var noPrefix = require('./no-prefix')
 var autoprefixer = require('autoprefixer')
 
 var rePrefix = /^-webkit-|^-moz-(osx-)?|^-ms-|^-o-/i
