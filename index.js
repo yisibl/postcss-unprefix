@@ -1,7 +1,9 @@
 var postcss = require('postcss')
 var properties = require('./properties')
+var noPrefix = require('./no-prefix')
+var autoprefixer = require('autoprefixer')
 
-var rePrefix = /^-webkit-|^-moz-|^-ms-|^-o-/gi
+var rePrefix = /^-webkit-|^-moz-(osx-)?|^-ms-|^-o-/i
 
 module.exports = postcss.plugin('postcss-unprefix', function() {
   //删除重复生成的声明
@@ -25,11 +27,17 @@ module.exports = postcss.plugin('postcss-unprefix', function() {
       var unPrefixProp = decl.prop.replace(rePrefix, '')
       var unPrefixValue = decl.value.replace(rePrefix, '')
 
+      // console.log(unPrefixProp, 'unPrefixProp')
+
       //TODO? values.indexOf(unPrefixValue)
       // Like display: -webkit-box don't create display: box
       if (properties.indexOf(unPrefixProp) === -1) {
         return
       }
+
+      // if (noPrefix.indexOf(unPrefixProp) > -1){
+      //   return
+      // }
 
       if (decl.prop.match(rePrefix) || decl.value.match(rePrefix)) {
         decl.cloneAfter({
@@ -41,5 +49,13 @@ module.exports = postcss.plugin('postcss-unprefix', function() {
 
     css.eachRule(removeRepeatDecl)
 
+    //TODO: browsers opts
+    // Use Autprefixer add prefix
+    var browsers = { browsers: ['last 2 versions', 'firefox > 9', 'opera >= 11.5', 'ie >= 9']}
+    postcss([ autoprefixer(browsers) ]).process(css).then(function (result) {
+    result.warnings().forEach(function (warn) {
+        console.warn(warn.toString());
+    });
+});
   }
 })

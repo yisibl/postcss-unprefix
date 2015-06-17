@@ -2,6 +2,10 @@
 // https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
 // From: http://peter.sh/experiments/vendor-prefixed-css-property-overview
 module.exports = [
+  //以下属性不生成标准属性
+  // "font-smoothing",
+  // "tap-highlight-color",
+  // "touch-callout",
   "align-content",
   "align-items",
   "align-self",
@@ -93,7 +97,6 @@ module.exports = [
   "font-feature-settings",
   "font-kerning",
   "font-size-delta",
-  "font-smoothing",
   "font-variant-ligatures",
   "grid",
   "grid-area",
@@ -194,7 +197,6 @@ module.exports = [
   "shape-margin",
   "shape-outside",
   "svg-shadow",
-  "tap-highlight-color",
   "text-align-last",
   "text-combine",
   "text-decoration",
@@ -216,7 +218,6 @@ module.exports = [
   "text-stroke-color",
   "text-stroke-width",
   "text-underline-position",
-  "touch-callout",
   "transform",
   "transform-origin",
   "transform-origin-x",
@@ -246,7 +247,6 @@ module.exports = [
   "math-display",
   "math-variant",
   "orient",
-  "osx-font-smoothing",
   "outline-radius",
   "outline-radius-bottomleft",
   "outline-radius-bottomright",

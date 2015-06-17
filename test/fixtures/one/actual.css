@@ -1,44 +1,41 @@
-.foo {
+.do-not-prefix {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.border-radius {
+  border-radius: 30px;
+}
+
+.transform {
+  -moz-transform: translate(10px, 20%);
+  -webkit-transform: translate(10px, 20%);
+      -ms-transform: translate(10px, 20%);
+       -o-transform: translate(10px, 20%);
+          transform: translate(10px, 20%);
+}
+
+.transition {
+  -moz-transition: -moz-transform .3s;
+    -o-transition: -o-transform .3s;
+       transition: -webkit-transform .3s;
+       transition: transform .3s;
+}
+
+.other {
   -moz-padding: 20px;
   -o-padding: 20px;
   padding: 20px;
-
   text-align: -webkit-center;
   text-align: -moz-center;
   text-align: -ms-center;
   text-align: -o-center;
   text-align: center;
-
   bar: -webkit-test;
-  -moz-columns: 30px;
-  columns: 30px;
-}
-
-.bar {
-  margin: 6620px;
-  margin: -webkit-auto;
-  margin: -moz-auto;
-  margin: auto;
-
-  text-align: -webkit-center;
-  text-align: -moz-center;
-  text-align: center;
-
   -ms-foo: 30px;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  osx-font-smoothing: grayscale;
-}
-
-
-.flex {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -ms-flexbox; 
-  display: flexbox;
-  display: flex;
 }

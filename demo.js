@@ -1,5 +1,6 @@
 var fs = require('fs')
 
+// All CSS properties
 var allProp = [
   'align-content',
   'align-items',

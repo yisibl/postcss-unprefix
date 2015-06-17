@@ -1,7 +1,9 @@
 var fs = require("fs")
 var test = require("tape")
 var postcss = require("postcss")
+// var autoprefixer = require('autoprefixer')
 var plugin = require("..")
+
 
 function filename(name) { return "test/" + name + ".css" }
 function read(name) { return fs.readFileSync(name, "utf8") }
@@ -13,6 +15,7 @@ function compareFixtures(t, name, msg, opts, postcssOpts) {
   opts = opts || {}
   var actual = postcss()
   .use(plugin(opts))
+  // .use(autoprefixer({ browsers: ['> 1%', 'firefox 15']}))
   .process(read(postcssOpts.from), postcssOpts)
   .css
   //output
