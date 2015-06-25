@@ -1,6 +1,7 @@
 // TODO: -moz-osx-font-smoothing
 // https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
 // From: http://peter.sh/experiments/vendor-prefixed-css-property-overview
+// min--moz-device-pixel-ratio/-moz-min-device-pixel-ratio
 module.exports = [
   //以下属性不生成标准属性
   // "font-smoothing",

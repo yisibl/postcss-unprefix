@@ -25,7 +25,9 @@ function compareFixtures(t, name, msg, opts, postcssOpts) {
   t.equal(actual.trim(), output.trim(), msg)
 }
 
-test("@custom-selector", function(t) {
-  compareFixtures(t, "one", "必须生成新的不带前缀的标准属性")
+test("unprefix", function(t) {
+  // compareFixtures(t, "one", "必须生成新的不带前缀的标准属性")
+  // compareFixtures(t, "flex", "必须生成新的不带前缀的标准属性")
+  compareFixtures(t, "double", "必须生成新的不带前缀的标准属性")
   t.end()
 })

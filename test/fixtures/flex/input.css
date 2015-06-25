@@ -1,0 +1,13 @@
+.flex {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.foo {
+  box-sizing: border-box; /* 标准属性应该写在非标准的后面 */
+  -moz-box-sizing: border-box;
+}

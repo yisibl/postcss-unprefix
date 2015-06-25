@@ -21,7 +21,7 @@ module.exports = postcss.plugin('postcss-unprefix', function() {
   }
 
   return function(css) {
-    css.eachDecl(function(decl) {
+    css.eachDecl(rePrefix, function(decl) {
       //替换成不带前缀的属性或属性值
       var unPrefixProp = decl.prop.replace(rePrefix, '')
       var unPrefixValue = decl.value.replace(rePrefix, '')
@@ -33,10 +33,6 @@ module.exports = postcss.plugin('postcss-unprefix', function() {
       if (properties.indexOf(unPrefixProp) === -1) {
         return
       }
-
-      // if (noPrefix.indexOf(unPrefixProp) > -1){
-      //   return
-      // }
 
       if (decl.prop.match(rePrefix) || decl.value.match(rePrefix)) {
         decl.cloneAfter({
@@ -50,11 +46,13 @@ module.exports = postcss.plugin('postcss-unprefix', function() {
 
     //TODO: browsers opts
     // Use Autprefixer add prefix
-    var browsers = { browsers: ['last 2 versions', 'firefox > 9', 'opera >= 11.5', 'ie >= 9']}
-    postcss([ autoprefixer(browsers) ]).process(css).then(function (result) {
-    result.warnings().forEach(function (warn) {
-        console.warn(warn.toString());
-    });
-});
+    // var browsers = {
+    //   browsers: ['last 2 versions', 'firefox > 9', 'opera >= 11.5', 'ie >= 9']
+    // }
+    // postcss([autoprefixer(browsers)]).process(css).then(function(result) {
+    //   result.warnings().forEach(function(warn) {
+    //     console.warn(warn.toString())
+    //   })
+    // })
   }
 })
