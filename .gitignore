@@ -4,6 +4,5 @@ node_modules
 *.swo
 .idea/
 *.iml
-test/fixtures/*.actual.css
 npm-debug.log
 *.sublime-workspace

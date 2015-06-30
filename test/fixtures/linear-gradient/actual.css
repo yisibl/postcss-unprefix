@@ -1,0 +1,19 @@
+.webkit1 {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), to(#000));
+  background: linear-gradient(to bottom, #fff 0%, #000 100%);
+}
+
+.webkit2 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
+  background: linear-gradient(to bottom, #fff 0%, #000 100%);
+}
+
+.webkit3 {
+  background: -webkit-linear-gradient(top, #fff 0%, #000 100%);
+}
+
+.other {
+  background: -webkit-linear-gradient(top, #fff 0%, #000 100%);
+  background: -moz-linear-gradient(top, #fff 0%, #000 100%);
+  background: -o-linear-gradient(top, #fff 0%, #000 100%);
+}

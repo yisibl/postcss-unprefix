@@ -10,7 +10,9 @@
     "url": "https://github.com/yisibl/postcss-unprefix.git"
   },
   "dependencies": {
-    "postcss": "^4.1.9"
+    "postcss": "^4.1.9",
+    "postcss-flexboxfixer": "^0.0.3",
+    "postcss-gradientfixer": "^0.0.2"
   },
   "devDependencies": {
     "tape": "^4.0.0"

@@ -27,7 +27,8 @@ function compareFixtures(t, name, msg, opts, postcssOpts) {
 
 test("unprefix", function(t) {
   // compareFixtures(t, "one", "必须生成新的不带前缀的标准属性")
-  // compareFixtures(t, "flex", "必须生成新的不带前缀的标准属性")
-  compareFixtures(t, "double", "必须生成新的不带前缀的标准属性")
+  compareFixtures(t, "flex", "必须生成新的不带前缀的标准属性")
+  // compareFixtures(t, "double", "必须生成新的不带前缀的标准属性")
+  compareFixtures(t, "linear-gradient", "必须生成新的不带前缀的标准属性")
   t.end()
 })

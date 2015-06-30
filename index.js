@@ -1,6 +1,8 @@
 var postcss = require('postcss')
 var properties = require('./properties')
 var autoprefixer = require('autoprefixer')
+var flexboxfixer = require('postcss-flexboxfixer')
+var gradientfixer = require('postcss-gradientfixer')
 
 var rePrefix = /^-webkit-|^-moz-(osx-)?|^-ms-|^-o-/i
 
@@ -42,17 +44,12 @@ module.exports = postcss.plugin('postcss-unprefix', function() {
       }
     })
 
-    css.eachRule(removeRepeatDecl)
+    // Use flexboxfixer add prefix
+    postcss()
+    .use(flexboxfixer)
+    .use(gradientfixer)
+    .process(css).css
 
-    //TODO: browsers opts
-    // Use Autprefixer add prefix
-    // var browsers = {
-    //   browsers: ['last 2 versions', 'firefox > 9', 'opera >= 11.5', 'ie >= 9']
-    // }
-    // postcss([autoprefixer(browsers)]).process(css).then(function(result) {
-    //   result.warnings().forEach(function(warn) {
-    //     console.warn(warn.toString())
-    //   })
-    // })
+    css.eachRule(removeRepeatDecl)
   }
 })
