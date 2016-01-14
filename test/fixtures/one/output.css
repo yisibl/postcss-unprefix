@@ -12,22 +12,19 @@
 }
 
 .border-radius {
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
   border-radius: 30px;
 }
 
 .transform {
   -moz-transform: translate(10px, 20%);
-  -webkit-transform: translate(10px, 20%);
-      -ms-transform: translate(10px, 20%);
-       -o-transform: translate(10px, 20%);
-          transform: translate(10px, 20%);
+  transform: translate(10px, 20%);
 }
 
 .transition {
-  -moz-transition: -moz-transform .3s;
-    -o-transition: -o-transform .3s;
-       transition: -webkit-transform .3s;
-       transition: transform .3s;
+  -webkit-transition: -webkit-transform .3s;
+  transition: transform .3s;
 }
 
 .other {
@@ -38,7 +35,6 @@
   text-align: -moz-center;
   text-align: -ms-center;
   text-align: -o-center;
-  text-align: center;
   bar: -webkit-test;
   -ms-foo: 30px;
 }
