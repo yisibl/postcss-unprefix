@@ -1,4 +1,4 @@
-.foo {
+.all {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -21,6 +21,7 @@
   -ms-flex-item-align: center;
   align-self: center;
   -webkit-box-orient: horizontal;
+  flex-direction: row;
   -webkit-box-direction: reverse;
   -webkit-flex-direction: row-reverse;
   -moz-box-orient: horizontal;
@@ -34,11 +35,14 @@
   -ms-flex-flow: column;
   flex-flow: column;
   -webkit-box-flex: 0;
+  flex: 0 auto;
   -webkit-flex: none;
+  flex: none auto;
   -moz-box-flex: 0;
   -ms-flex: none;
   flex: none;
   -webkit-box-flex: 9;
+  flex: 9 auto;
   -webkit-flex-grow: 9;
   -moz-box-flex: 9;
   -ms-flex-positive: 9;
