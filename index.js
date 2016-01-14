@@ -1,6 +1,5 @@
 var postcss = require('postcss')
 var properties = require('./properties')
-var autoprefixer = require('autoprefixer')
 var flexboxfixer = require('postcss-flexboxfixer')
 var gradientfixer = require('postcss-gradientfixer')
 
