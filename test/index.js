@@ -1,7 +1,6 @@
 var fs = require("fs")
 var test = require("tape")
 var postcss = require("postcss")
-// var autoprefixer = require('autoprefixer')
 var plugin = require("..")
 
 
@@ -15,7 +14,6 @@ function compareFixtures(t, name, msg, opts, postcssOpts) {
   opts = opts || {}
   var actual = postcss()
   .use(plugin(opts))
-  // .use(autoprefixer({ browsers: ['> 1%', 'firefox 15']}))
   .process(read(postcssOpts.from), postcssOpts)
   .css
   //output
@@ -26,9 +24,9 @@ function compareFixtures(t, name, msg, opts, postcssOpts) {
 }
 
 test("unprefix", function(t) {
-  // compareFixtures(t, "one", "必须生成新的不带前缀的标准属性")
+  compareFixtures(t, "one", "必须生成新的不带前缀的标准属性")
   compareFixtures(t, "flex", "必须生成新的不带前缀的标准属性")
-  // compareFixtures(t, "double", "必须生成新的不带前缀的标准属性")
-  compareFixtures(t, "linear-gradient", "必须生成新的不带前缀的标准属性")
+  compareFixtures(t, "double", "必须生成新的不带前缀的标准属性")
+  // compareFixtures(t, "linear-gradient", "必须生成新的不带前缀的标准属性")
   t.end()
 })

@@ -1,6 +1,5 @@
 var postcss = require('postcss')
 var properties = require('./properties')
-var autoprefixer = require('autoprefixer')
 var flexboxfixer = require('postcss-flexboxfixer')
 var gradientfixer = require('postcss-gradientfixer')
 
@@ -9,21 +8,21 @@ var rePrefix = /^-webkit-|^-moz-(osx-)?|^-ms-|^-o-/i
 module.exports = postcss.plugin('postcss-unprefix', function() {
   //删除重复生成的声明
   function removeRepeatDecl(rule, i) {
-    rule.eachDecl(function(decl, i) {
+    rule.walkDecls(function(decl, i) {
       var n = 0
-      decl.parent.eachDecl(function(decla) {
+      decl.parent.walkDecls(function(decla) {
         if (decl.prop === decla.prop && decl.value === decla.value) {
           n++
         }
       })
       if (n > 1) {
-        decl.removeSelf()
+        decl.remove()
       }
     })
   }
 
   return function(css) {
-    css.eachDecl(rePrefix, function(decl) {
+    css.walkDecls(rePrefix, function(decl) {
       //替换成不带前缀的属性或属性值
       var unPrefixProp = decl.prop.replace(rePrefix, '')
       var unPrefixValue = decl.value.replace(rePrefix, '')
@@ -50,6 +49,6 @@ module.exports = postcss.plugin('postcss-unprefix', function() {
     .use(gradientfixer)
     .process(css).css
 
-    css.eachRule(removeRepeatDecl)
+    css.walkRules(removeRepeatDecl)
   }
 })
